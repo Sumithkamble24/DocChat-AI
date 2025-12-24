@@ -1,36 +1,20 @@
-# DocChat-AI
+# Simple GenAI RAG Application
 
-DocChat-AI is a GenAI-based Document Question Answering application built using
-Retrieval-Augmented Generation (RAG).  
-It allows users to ask questions and receive answers based on the content of uploaded documents.
+This application allows you to upload PDF documents and ask questions about them.
 
----
+## Workflow
 
-## 🚀 Features
-- Document-based question answering using LLMs
-- Semantic search with vector embeddings
-- Context-aware responses grounded in document data
-- Simple web-based interface
-- End-to-end GenAI application workflow
+1.  **Upload**: Go to the Upload page and select a PDF file. The system extracts the text from the PDF.
+2.  **Query**: Go to the Query page (Home). Type a question related to your uploaded documents.
+3.  **Answer**: The system searches through the document text and provides an answer based on relevant snippets.
 
----
+## Architecture
 
-## 🧠 How It Works (RAG Pipeline)
-1. Document text is extracted and split into chunks  
-2. Embeddings are generated for each chunk  
-3. Chunks are stored in a vector store  
-4. User queries are embedded and matched with relevant chunks  
-5. Retrieved context is passed to an LLM to generate accurate answers  
+-   **Frontend**: React (Vite) with Shadcn UI.
+-   **Backend**: Node.js with Express.
+-   **Storage**: In-memory storage for documents and text.
+-   **RAG Logic**: Simple keyword-based retrieval (Simulated RAG).
 
----
+## Note on Python/AI
 
-## 🛠️ Tech Stack
-- **Backend:** Node.js / Python
-- **LLM:** OpenAI API or open-source LLM
-- **Vector Store:** FAISS
-- **Frontend:** HTML, CSS
-- **Deployment:** Free-tier cloud platform
-
----
-
-## 📂 Project Structure
+Due to environment restrictions on the Replit free tier preventing the installation of heavy Python ML libraries (PyTorch, Transformers), this application uses a Node.js backend with a simplified retrieval logic instead of the full Python/FAISS stack originally planned. It effectively demonstrates the full application flow (Upload -> Process -> Query -> Response).
